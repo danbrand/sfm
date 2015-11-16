@@ -13,3 +13,29 @@
  *= require_tree .
  *= require_self
  */
+
+
+/*---------------------------- NAVBAR ----------------------------*/
+
+.navbar.navbar-default{
+	margin-bottom: 0;
+}
+/*---------------------------- HOMEPAGE ----------------------------*/
+
+#homepage_jumbotron{
+	text-align: center;
+	height: 91.5vh;
+	background-image: url('homepage3.png');
+	color: white;	
+}
+
+/*---------------------------- SIGN IN ----------------------------*/
+
+#signin_jumbotron{
+	background-image: url('signin_banner.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	color: white;
+	text-align: center;
+	height: 35vh;
+}
