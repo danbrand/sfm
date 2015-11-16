@@ -10,5 +10,12 @@
   <%= @university.country %>
 </p>
 
+<%= link_to 'Add Course', new_course_path(university: @university.id), class: "btn btn-primary" %>
+
+<% @courses.each do |course| %>
+	<h3><%= course.title %></h3>
+<% end %>
+
+
 <%= link_to 'Edit', edit_university_path(@university) %> |
 <%= link_to 'Back', universities_path %>

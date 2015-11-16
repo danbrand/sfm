@@ -1,3 +1,5 @@
+
+
 <%= simple_form_for(@course) do |f| %>
   <%= f.error_notification %>
 
@@ -9,10 +11,13 @@
     <%= f.input :student_image %>
     <%= f.input :student_name %>
     <%= f.input :student_description %>
-    <%= f.association :university %>
+    <%= f.input :university_id, as: :hidden, input_html: { value: params[:university] } %>
+
   </div>
 
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 <% end %>
+
+
