@@ -1,0 +1,18 @@
+<%= simple_form_for(@course) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :code %>
+    <%= f.input :title %>
+    <%= f.input :image %>
+    <%= f.input :description %>
+    <%= f.input :student_image %>
+    <%= f.input :student_name %>
+    <%= f.input :student_description %>
+    <%= f.association :university %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

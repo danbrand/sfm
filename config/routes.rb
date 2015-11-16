@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :videos
+  resources :topics
+  resources :courses
+  resources :universities
   get 'dashboard/index'
 
   get 'home/index'
