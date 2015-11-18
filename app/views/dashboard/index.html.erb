@@ -1,10 +1,10 @@
+<div class="jumbotron" id="admin_jumbotron">
+  <h2><%= @user.profile.name %>'s Dashboard</h2>
+  <h4><%= @user.profile.university %></h4>
+  <h4><%= @user.profile.degree %></h4>
+</div>
+
 <div class="container">
-	<h1><%= @user.email %></h1>
-	<ul class="nav nav-tabs">
-	  <li role="presentation" class="active"><a href="#">Courses</a></li>
-	  <li role="presentation"><a href="#">Profile</a></li>
-	  <li role="presentation"><a href="#">Settings</a></li>
-	</ul>
 
 	<% if @user.profile.blank? %>
 		<%= link_to 'Create profile', new_profile_path, class: 'btn btn-primary' %>

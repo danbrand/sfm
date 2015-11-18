@@ -10,4 +10,12 @@ class AdminController < ApplicationController
   def courses
     @courses = Course.all
   end
+
+  def topics
+    @topics = Topic.all
+  end
+
+  def videos
+    @videos = Video.all
+  end
 end

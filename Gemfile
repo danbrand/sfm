@@ -6,6 +6,8 @@ gem 'rails', '4.2.1'
 gem 'devise'
 gem 'simple_form'
 gem 'country_select'
+gem "paperclip", "~> 4.3"
+gem 'carrierwave'
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets

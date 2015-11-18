@@ -1,44 +1,42 @@
+<div class="container">
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Code:</strong>
-  <%= @course.code %>
-</p>
+<div class="row">
+  <div class="col-md-10">
+    <h2><%= @course.code %></h2>
+    <h4><%= @course.title %></h4>
+  </div>
+  <div class="col-md-2">
 
-<p>
-  <strong>Title:</strong>
-  <%= @course.title %>
-</p>
+  </div>
+</div>
 
-<p>
-  <strong>Image:</strong>
-  <%= @course.image %>
-</p>
+<div class="row">
+  <div class="col-md-6">
+    <h4>Course Info</h4>
+    <p><%= @course.description %></p>
+  </div>
+  <div class="col-md-6">
+    <h4>Student Info</h4>
+    <h5><%= @course.student_name %></h5>
+    <p><%= @course.student_description %></p>
+  </div>
+</div>
 
-<p>
-  <strong>Description:</strong>
-  <%= @course.description %>
-</p>
 
-<p>
-  <strong>Student image:</strong>
-  <%= @course.student_image %>
-</p>
+<ul class="nav nav-tabs">
+  <%= @topics.each do |topic| %>
+    <li role="presentation"><a href="#"><%= topic.title%></a></li>
+  <% end %>
+</ul>
 
-<p>
-  <strong>Student name:</strong>
-  <%= @course.student_name %>
-</p>
 
-<p>
-  <strong>Student description:</strong>
-  <%= @course.student_description %>
-</p>
+<div class="video">
+<iframe width="853" height="480" src="https://www.youtube.com/embed/F-C6fCBy99w" frameborder="0" allowfullscreen></iframe>
+</div>
 
-<p>
-  <strong>University:</strong>
-  <%= @course.university %>
-</p>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+
+</div>
+

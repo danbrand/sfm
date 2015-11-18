@@ -12,8 +12,8 @@
     <li role="presentation">  <%= link_to 'Users', admin_path %></li>
     <li role="presentation"><%= link_to 'Universities', admin_universities_path %></li>
     <li role="presentation" class="active"><%= link_to 'Courses', admin_courses_path %></li>
-    <li role="presentation"><%= link_to 'Topics', topics_path %></li>
-     <li role="presentation"><%= link_to 'Videos', videos_path %></li>
+    <li role="presentation"><%= link_to 'Topics', admin_topics_path %></li>
+     <li role="presentation"><%= link_to 'Videos', admin_videos_path %></li>
   </ul>
 
   <table class="table table-stripped" id="admin_table">
@@ -33,7 +33,6 @@
           <td><%= course.code %></td>
           <td><%= course.title %></td>
           <td><%= course.student_name %></td>
-          <td><%= course.university.name %></td>
           <td><%= link_to 'Show', course %></td>
           <td><%= link_to 'Edit', edit_course_path(course) %></td>
           <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>

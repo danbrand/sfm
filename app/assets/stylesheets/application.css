@@ -13,7 +13,9 @@
  *= require_tree .
  *= require_self
  */
-
+* {
+	font-family: 'Montserrat', sans-serif;
+}
 /*---------------------------- SITE WIDE ----------------------------*/
 
 a:hover{
@@ -31,9 +33,19 @@ a:hover{
 
 #homepage_jumbotron{
 	text-align: center;
-	height: 91.5vh;
-	background-image: url('homepage3.png');
+	height: 92vh;
+	background-image: url('homepage4.png');
+	background-position: center;
+	background-repeat: no-repeat;
 	color: white;	
+}
+
+#homepage_jumbotron h1 {
+	font-size: 5.5em;
+}
+
+#homepage_jumbotron p {
+	font-size: 2em;
 }
 
 /*---------------------------- SIGN IN ----------------------------*/
@@ -59,4 +71,11 @@ a:hover{
 	margin-top: 2em;
 }
 
+/*---------------------------- COURSES ----------------------------*/
+
+iframe{
+	margin: 0 auto;
+	display:block;
+	margin-top: 30px;
+}
 

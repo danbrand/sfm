@@ -7,9 +7,13 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
+  get 'courses', to: 'courses#index'
+
   get 'admin', to: 'admin#index'
   get 'admin/universities', to: 'admin#universities'
   get 'admin/courses', to: 'admin#courses'
+  get 'admin/topics', to: 'admin#topics'
+  get 'admin/videos', to: 'admin#videos'
 
   resources :profiles
   devise_for :users
