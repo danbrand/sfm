@@ -14,6 +14,13 @@
  *= require_self
  */
 
+/*---------------------------- SITE WIDE ----------------------------*/
+
+a:hover{
+	text-decoration: none;
+	background-color: none;
+}
+
 
 /*---------------------------- NAVBAR ----------------------------*/
 
@@ -39,3 +46,17 @@
 	text-align: center;
 	height: 35vh;
 }
+
+/*---------------------------- ADMIN PANEL ----------------------------*/
+
+#admin_jumbotron{
+	text-align: center;
+	background-image: url('admin.png');
+	color: white;	
+}
+
+#admin_table{
+	margin-top: 2em;
+}
+
+

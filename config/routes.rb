@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   get 'home/index'
 
+  get 'admin', to: 'admin#index'
+  get 'admin/universities', to: 'admin#universities'
+  get 'admin/courses', to: 'admin#courses'
+
   resources :profiles
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

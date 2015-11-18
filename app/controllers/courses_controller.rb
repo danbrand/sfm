@@ -10,12 +10,13 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+    @course = Course.find(params[:id])
   end
 
   # GET /courses/new
   def new
     @course = Course.new
-    @university = University.all
+    @university = University.find(params[:university])
   end
 
   # GET /courses/1/edit
