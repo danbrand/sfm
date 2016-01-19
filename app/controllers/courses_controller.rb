@@ -3,15 +3,29 @@ class CoursesController < ApplicationController
 
   # GET /courses
   # GET /courses.json
+  def search
+    if params[:search].present?
+      @courses = Course.search(params[:search])
+    else
+      @courses = Course.all
+    end   
+  end 
+
+
   def index
     @courses = Course.all
+    
   end
 
   # GET /courses/1
   # GET /courses/1.json
   def show
-    @course = Course.find(params[:id])
-    @topics = Topic.all
+    @topics = @course.topics
+    if params[:video]
+      @video = Video.find(params[:video])
+    else 
+      @video = @topics.first.videos.first  
+    end
   end
 
   # GET /courses/new
@@ -72,6 +86,6 @@ class CoursesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def course_params
-      params.require(:course).permit(:code, :title, :image, :description, :student_image, :student_name, :student_description, :university_id)
+      params.require(:course).permit(:code, :title, :image, :description, :student_image, :student_name, :student_description, :university_id, :search)
     end
 end

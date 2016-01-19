@@ -1,7 +1,14 @@
 Rails.application.routes.draw do
+  resources :payments, only: [:index, :show, :new, :create]
   resources :videos
   resources :topics
-  resources :courses
+  resources :courses do
+    collection do
+      get 'search'
+    end
+ end 
+
+
   resources :universities
   get 'dashboard/index'
 

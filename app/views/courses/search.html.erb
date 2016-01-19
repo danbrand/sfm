@@ -1,5 +1,18 @@
+
+  <p id="notice"><%= notice %></p> 
+
+
+
+<div class="jumbotron" id="search_background">
+    <%= form_tag search_courses_path, method: :get, role: "search" do %>
+      <p>   
+        <%= text_field_tag :search, params[:search], class: "form-control", placeholder: "Search courses"%>
+        <%= submit_tag "Search", name: nil, class: "btn btn-primary", id: "submit_button" %>
+      </p>  
+     <% end %>
+</div>  
+
 <div class="container">  
-  <p id="notice"><%= notice %></p>
 
   <div class="row">
   <% @courses.each do |course| %> 
@@ -8,8 +21,7 @@
       <div class="thumbnail">
          <img src="<%= course.image %>">
         <div class="caption">
-          <h3><%= link_to course.code, course_path(course.id)%></h3>
-          <h4><%= course.title %></h4>
+          <h3><%= course.title %></h3>
           <h5><%= course.university %> </h5>
           <img src="<%= course.student_image%>" id="course_index_student_image" class="img-circle">
         </div>
@@ -20,5 +32,4 @@
   </div>
 
 
-  </div>
-
+</div>

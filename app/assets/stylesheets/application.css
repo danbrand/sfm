@@ -33,7 +33,7 @@ a:hover{
 
 #homepage_jumbotron{
 	text-align: center;
-	height: 92vh;
+	height: 100vh;
 	background-image: url('homepage4.png');
 	background-position: center;
 	background-repeat: no-repeat;
@@ -79,3 +79,33 @@ iframe{
 	margin-top: 30px;
 }
 
+#student_image{
+	height: 100px;
+	width: 100px;
+	border-style: solid;
+	border-color: black;
+	border-
+}
+/*---------------------------- COURSE LISTING ----------------------------*/
+
+#course_index_student_image{
+	height: 50px;
+	width: 50px;
+}
+
+/*---------------------------- SEARCH BOX ----------------------------*/
+
+.form-control{
+	width: 650px;
+	float: left;
+	margin: 0 auto;	
+}
+
+#submit_button{
+}
+
+#search_background{
+	background-color: #d8d8d8;
+	height: 20px;
+	text-align: center;
+}

@@ -7,8 +7,30 @@
     <h2><%= @course.code %></h2>
     <h4><%= @course.title %></h4>
   </div>
-  <div class="col-md-2">
+  <div class="col-md-2"> 
+    <%= form_tag payments_path(course: @course.id) do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+    </label>
+  </article>
 
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="<%= @course.code %>"
+          data-amount="500"
+          data-name='SpoonFeedMe'
+          data-currency='aud'
+          data-email='<%=current_user.email%>'
+          data-label='Buy now'
+          data-image='<%= @course.image%>'
+          data-locale="auto">
+          </script>
+  <% end %>
   </div>
 </div>
 
@@ -19,21 +41,50 @@
   </div>
   <div class="col-md-6">
     <h4>Student Info</h4>
-    <h5><%= @course.student_name %></h5>
-    <p><%= @course.student_description %></p>
+      <div class="col-md-3">
+        <img src="<%= @course.student_image %>" id="student_image" class="img-circle">
+      </div>
+      <div class="col-md-9">  
+        <h5><%= @course.student_name %></h5>
+        <p><%= @course.student_description %></p>
+      </div>
   </div>
 </div>
 
 
 <ul class="nav nav-tabs">
-  <%= @topics.each do |topic| %>
-    <li role="presentation"><a href="#"><%= topic.title%></a></li>
-  <% end %>
+  <% @topics.each do |topic| %>
+  <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      <%= topic.title%> <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <% topic.videos.each do |video| %>
+        <li>
+          <% if video.premium %>
+            <% if @course.purchased_by?(current_user.id) %>
+              <%= link_to course_path(@course, video: video.id) do %>
+                <%= video.title %>&nbsp;&nbsp;<i class="fa fa-clock-o"></i> <%= video.duration %>
+                <% end %>
+             <% else %>
+                   <a href ="#"><%= video.title %>&nbsp;&nbsp;<i class="fa fa-clock-o"></i> <%= video.duration %></a>
+              <% end %>
+          <% else %>
+              <%= link_to course_path(@course, video: video.id) do %>
+                <%= video.title %>&nbsp;&nbsp;<i class="fa fa-clock-o"></i> <%= video.duration %>
+                <% end %>
+            <% end %> 
+        </li>
+      <% end %>
+    </ul>
+  </li>
+ <% end %>
 </ul>
 
 
+
 <div class="video">
-<iframe width="853" height="480" src="https://www.youtube.com/embed/F-C6fCBy99w" frameborder="0" allowfullscreen></iframe>
+<%= @video.embed_code.html_safe %>
 </div>
 
 
